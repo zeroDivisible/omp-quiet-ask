@@ -1,0 +1,19 @@
+{
+  "name": "omp-quiet-ask",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "omp extension: render the ask form only after it is answered — no duplicated question blocks",
+  "omp": {
+    "extensions": ["./src/index.ts"]
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@oh-my-pi/pi-coding-agent": "*",
+    "@types/bun": "latest",
+    "typescript": "latest"
+  }
+}
