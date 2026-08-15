@@ -1,0 +1,20 @@
+{
+  "name": "omp-quiet-ask",
+  "owner": {
+    "name": "zeroDivisible",
+    "email": "zerodivisible@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "omp-quiet-ask",
+      "description": "Render the ask form only after it is answered — no duplicated question blocks",
+      "source": "./",
+      "version": "0.1.0",
+      "author": { "name": "zeroDivisible" },
+      "homepage": "https://github.com/zeroDivisible/omp-quiet-ask",
+      "repository": "https://github.com/zeroDivisible/omp-quiet-ask",
+      "category": "productivity",
+      "tags": ["omp", "extension", "ask", "tui"]
+    }
+  ]
+}
