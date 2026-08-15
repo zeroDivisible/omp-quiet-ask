@@ -43,8 +43,8 @@ omp plugin disable omp-quiet-ask   # or delete the copied file
 
 ```sh
 bun install
-bun test      # unit + contract tests
-bun run build # typecheck only — omp loads TypeScript directly
+make test   # unit + contract tests
+make build  # typecheck only — omp loads TypeScript directly
 ```
 
 - `src/index.ts` — the extension (tool shadow + renderers)
