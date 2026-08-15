@@ -57,3 +57,5 @@ make build  # typecheck only — omp loads TypeScript directly
   rendered form.
 - The tool description shown to the model is a faithful paraphrase of the
   native prompt, not the original text.
+- The native `concurrency: "exclusive"` flag is not inherited: two `ask`
+  calls issued in one batch would clobber the shared selector surface.

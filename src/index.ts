@@ -38,8 +38,16 @@ export default function quietAsk(pi: ExtensionAPI) {
         .min(1),
     }),
     strict: true,
-    execute(_id, params, _signal, _onUpdate, ctx) {
-      return ctx.invokeTool!(params as Record<string, unknown>);
+    async execute(_id, params, _signal, _onUpdate, ctx) {
+      if (!ctx.invokeTool) {
+        return {
+          content: [
+            { type: "text", text: "Error: native ask tool unavailable (ask.enabled=false?)" },
+          ],
+          isError: true,
+        };
+      }
+      return ctx.invokeTool(params as Record<string, unknown>);
     },
     renderCall() {
       return { render: () => [] as string[] };

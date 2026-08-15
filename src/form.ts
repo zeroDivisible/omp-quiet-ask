@@ -22,7 +22,10 @@ export function formLines(
       const label =
         typeof opt === "string"
           ? opt
-          : String((opt as { label?: unknown }).label);
+          : typeof (opt as { label?: unknown })?.label === "string"
+            ? (opt as { label: string }).label
+            : undefined;
+      if (label === undefined) continue;
       const on = selected.has(label);
       const marker = q.multi ? (on ? "☑" : "☐") : on ? "●" : "○";
       lines.push(fg(on ? "accent" : "muted", `${marker} ${label}`));

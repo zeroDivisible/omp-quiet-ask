@@ -65,6 +65,13 @@ describe("quiet-ask extension", () => {
     expect(result).toBe(nativeResult);
   });
 
+  test("execute returns a clean error when the native tool is unavailable", async () => {
+    const result = (await register().execute("id", {}, undefined, undefined, {})) as {
+      isError: boolean;
+    };
+    expect(result.isError).toBe(true);
+  });
+
   test("renderCall renders no lines while the dialog is open", () => {
     expect(register().renderCall().render(80)).toEqual([]);
   });
